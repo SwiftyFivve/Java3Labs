@@ -41,11 +41,32 @@ public class FullReceiver extends BroadcastReceiver {
                 context.sendBroadcast(intent1);
 
             }
-
-
-
-
         } else if (intent.getAction().equals(ActionsExtras.ACTION_DELETE)){
+
+
+            FileHelper helper = new FileHelper(context);
+
+            ArrayList<SerializeObject> deleteObject = helper.loadArray();
+
+            String fName = intent.getStringExtra(ActionsExtras.EXTRA_FIRST);
+            String lName = intent.getStringExtra(ActionsExtras.EXTRA_LAST);
+            int age = intent.getIntExtra(ActionsExtras.EXTRA_AGE, -1);
+
+            int counter = -1;
+
+            for(int i=0; i< deleteObject.size(); i++){
+                counter++;
+                if(fName.equals(deleteObject.get(i).firstName) &&
+                        lName.equals(deleteObject.get(i).lastName) &&
+                        age == deleteObject.get(i).age){
+                    deleteObject.remove(counter);
+                }
+            }
+
+
+            helper.onSave(deleteObject);
+
+
 
         }
 

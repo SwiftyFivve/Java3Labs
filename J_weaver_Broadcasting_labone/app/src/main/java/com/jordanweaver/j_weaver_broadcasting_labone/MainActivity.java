@@ -44,7 +44,7 @@ public class MainActivity extends Activity implements MainFragment.showDetails{
         if (id == R.id.action_add) {
 
             Intent intent = new Intent(this, FormActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent, RESULT_OK);
 
             return true;
         }
@@ -56,14 +56,18 @@ public class MainActivity extends Activity implements MainFragment.showDetails{
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        getFragmentManager().beginTransaction().replace(R.id.listContainer,
-                MainFragment.newInstance(), MainFragment.TAG).commit();
+        Log.e("Result Code", requestCode+"");
+
+        if(resultCode == RESULT_OK) {
+            getFragmentManager().beginTransaction().replace(R.id.listContainer,
+                    MainFragment.newInstance(), MainFragment.TAG).commit();
+        }
 
 
     }
 
     @Override
     public void passIntent(Intent _intent) {
-        startActivity(_intent);
+        startActivityForResult(_intent, RESULT_OK);
     }
 }

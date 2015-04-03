@@ -1,6 +1,7 @@
 package com.jordanweaver.j_weaver_broadcasting_labone;
 
 import android.app.Activity;
+import android.app.Notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -67,31 +68,16 @@ public class DetailsActivity extends Activity {
         int id = item.getItemId();
 
         if (id == R.id.action_delete) {
+
             Intent startingIntent = getIntent();
 
-            FileHelper helper = new FileHelper(this);
-
-            ArrayList<SerializeObject> deleteObject = helper.loadArray();
-
-            String fName = startingIntent.getStringExtra(ActionsExtras.EXTRA_FIRST);
-            String lName = startingIntent.getStringExtra(ActionsExtras.EXTRA_LAST);
-            int age = startingIntent.getIntExtra(ActionsExtras.EXTRA_AGE, -1);
-
-            int counter = -1;
-
-            for(int i=0; i< deleteObject.size(); i++){
-                counter++;
-                if(fName.equals(deleteObject.get(i).firstName) &&
-                        lName.equals(deleteObject.get(i).lastName) &&
-                        age == deleteObject.get(i).age){
-                    deleteObject.remove(counter);
-                }
-            }
-
-
-            helper.onSave(deleteObject);
-
-            Intent intent = new Intent(ActionsExtras.ACTION_UPDATE);
+            Intent intent = new Intent(ActionsExtras.ACTION_DELETE);
+            intent.putExtra(ActionsExtras.EXTRA_FIRST,
+                    startingIntent.getStringExtra(ActionsExtras.EXTRA_FIRST));
+            intent.putExtra(ActionsExtras.EXTRA_LAST,
+                    startingIntent.getStringExtra(ActionsExtras.EXTRA_LAST));
+            intent.putExtra(ActionsExtras.EXTRA_AGE,
+                    startingIntent.getIntExtra(ActionsExtras.EXTRA_AGE, -1));
 
             sendBroadcast(intent);
 
@@ -104,8 +90,9 @@ public class DetailsActivity extends Activity {
     BroadcastReceiver updateList = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+
             finish();
-            //unregisterReceiver(updateList);
+
         }
     };
 
