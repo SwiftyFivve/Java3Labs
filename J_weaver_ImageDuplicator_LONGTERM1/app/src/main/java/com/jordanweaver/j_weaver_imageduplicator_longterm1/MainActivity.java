@@ -65,20 +65,20 @@ public class MainActivity extends Activity implements GalleryFragment.showImg{
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            if(intent.hasExtra(Intent.EXTRA_TEXT)) {
-
-                File dir = getExternalFilesDir(null);
-                File[] files = dir.listFiles();
-                File deletePhoto;
-
-                for(File i : files){
-                    if(i.getName().equals(intent.getStringExtra(Intent.EXTRA_TEXT))){
-                        deletePhoto = new File (Uri.fromFile(i).getPath());
-                        deletePhoto.delete();
-                    }
-                }
-
-            }
+//            if(intent.hasExtra(Intent.EXTRA_TEXT)) {
+//
+//                File dir = getExternalFilesDir(null);
+//                File[] files = dir.listFiles();
+//                File deletePhoto;
+//
+//                for(File i : files){
+//                    if(i.getName().equals(intent.getStringExtra(Intent.EXTRA_TEXT))){
+//                        deletePhoto = new File (Uri.fromFile(i).getPath());
+//                        deletePhoto.delete();
+//                    }
+//                }
+//
+//            }
 
 
         }
