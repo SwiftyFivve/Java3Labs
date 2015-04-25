@@ -27,7 +27,7 @@ import java.util.ArrayList;
  */
 public class MappingFrag extends MapFragment implements
         GoogleMap.OnMapLongClickListener, GoogleMap.InfoWindowAdapter,
-GoogleMap.OnInfoWindowClickListener{
+        GoogleMap.OnInfoWindowClickListener{
 
     private static String ARG_LATITUDE = "AddForm.ARG_LATITUDE";
     private static String ARG_LONGITUDE = "AddForm.ARG_LONGITUDE";
