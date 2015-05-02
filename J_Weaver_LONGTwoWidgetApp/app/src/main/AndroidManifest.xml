@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jordanweaver.j_weaver_longtwowidgetapp" >
+
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--Jordan Weaver-->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name=".MainActivity1"
+            android:label="@string/title_activity_main_activity1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".DetailsActivity"
+            android:label="@string/details_title" >
+            <intent-filter>
+                <action android:name="com.j_weaver_LONGTwoWidgetApp.ACTION_RECIPE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ConfigAutoActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ConfigFlipActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".FlipWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver
+            android:name=".FlipWidgetProvider"
+            android:exported="true" android:label="@string/flipper_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.j_weaver_LONGTwoWidgetApp.ACTION_NEXT" />
+                <action android:name="com.j_weaver_LONGTwoWidgetApp.ACTION_PREVIOUS" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/flip_widget_provider" />
+        </receiver>
+
+        <service
+            android:name=".AutoWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver
+            android:name=".AutoWidgetProvider"
+            android:exported="true" android:label="@string/auto_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/auto_widget_provider" />
+        </receiver>
+
+    </application>
+
+</manifest>

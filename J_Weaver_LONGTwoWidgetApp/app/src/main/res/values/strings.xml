@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---->
+<!---->
+<!---->
+<!--Jordan Weaver-->
+<!---->
+<!---->
+<!---->
+<!---->
+
+<resources>
+
+    <string name="app_name">J_Weaver_LONGTwoWidgetApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="upArrow">▲</string>
+    <string name="downArrow">▼</string>
+    <string name="details_title">Recipe Details</string>
+    <string name="title_activity_main_activity1">MainActivity1</string>
+    <string name="title_feed1">Feed</string>
+    <string name="title_favorite2">Favorite</string>
+    <string name="action_favorite">Favorite</string>
+    <string name="ingredients">Ingredients:</string>
+    <string name="action_save">Save</string>
+    <string name="feed_source">Widget Feed</string>
+    <string name="feed_selection">Choose Feed</string>
+    <string name="feed_summary">Choose the source of your Widgets feed</string>
+
+    <string name="auto_name">.Recipe Auto</string>
+    <string name="flipper_name">.Recipe Controller Widget</string>
+
+
+</resources>

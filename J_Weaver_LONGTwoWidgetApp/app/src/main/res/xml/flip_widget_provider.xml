@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---->
+<!---->
+<!---->
+<!--Jordan Weaver-->
+<!---->
+<!---->
+<!---->
+<!---->
+
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minHeight="110dp"
+    android:minWidth="180dp"
+    android:updatePeriodMillis="9000000"
+    android:initialLayout="@layout/flip_widget_layout"
+    android:widgetCategory="home_screen"
+    android:resizeMode="vertical|horizontal"
+    android:configure="com.jordanweaver.j_weaver_longtwowidgetapp.ConfigFlipActivity">
+
+</appwidget-provider>

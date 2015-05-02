@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---->
+<!---->
+<!---->
+<!--Jordan Weaver-->
+<!---->
+<!---->
+<!---->
+<!---->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/feed_source">
+
+        <ListPreference
+            android:key="PREF_FEED"
+            android:title="@string/feed_source"
+            android:summary="@string/feed_summary"
+            android:entries="@array/feed_selection"
+            android:entryValues="@array/feed_values"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
